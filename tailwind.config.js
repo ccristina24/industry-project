@@ -1,4 +1,4 @@
-module.config = {
+module.exports = {
   theme: {
     extend: {
       colors: {
@@ -13,6 +13,12 @@ module.config = {
           blue: "#D75722",
         },
       },
+      fontFamily: {
+        chewy: ["Chewy", "cursive"],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
+     
     },
   },
+
 };
