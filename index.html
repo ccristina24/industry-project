@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script>
       tailwind.config = {
         theme: {
@@ -16,10 +16,9 @@
                 purple: "#8588B8",
                 blue: "#AEE1ED",
               },
-              dark_primary: {
+              darkprimary: {
+                blue: "#5A5C7F",
                 orange: "#D75722",
-                purple: "#5A5C7F",
-                blue: "#D75722",
               },
             },
             fontFamily: {
@@ -37,49 +36,49 @@
   </head>
   <body>
     <div
-      class="max-w-xl mx-auto mt-10 bg-white bg-opacity-90 rounded-3xl border-2 border-orange-400 p-8 shadow-lg font-montserrat"
+      class="max-w-xl mx-auto mt-10 bg-white bg-opacity-90 rounded-3xl border-2 border-primary-orange p-8 shadow-lg font-montserrat"
     >
       <div class="mb-6">
-        <h1 class="text-lg font-bold text-gray-600 mb-4">CHOOSE TOPIC</h1>
+        <h1 class="text-lg font-bold text-darkprimary-blue mb-4">CHOOSE TOPIC</h1>
 
         <div class="flex flex-wrap gap-4">
           <div
-            class="bg-blue-100 text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
           >
             YouthMedia
           </div>
           <div
-            class="bg-blue-100 text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
           >
             MuralPainting
           </div>
           <div
-            class="bg-blue-100 text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
           >
             Design
           </div>
           <div
-            class="bg-blue-100 text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
           >
             Lifestyle
           </div>
           <div
-            class="bg-blue-100 text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
           >
             Education
           </div>
           <div
-            class="bg-blue-100 text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
           >
             Singing
           </div>
           <div
-            class="bg-blue-100 text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
           >
             Health
           </div>
           <div
-            class="bg-blue-100 text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
           >
             OutdoorActivites
           </div>
@@ -87,7 +86,7 @@
       </div>
 
       <div class="mb-6">
-        <h2 class="text-lg font-bold text-gray-600 mb-2">WHAT’S HAPPENING?</h2>
+        <h2 class="text-lg font-bold text-darkprimary-blue mb-2">WHAT’S HAPPENING?</h2>
 
         <textarea
           class="w-full h-32 border rounded-lg p-4 text-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-300 resize-none"
@@ -95,7 +94,7 @@
         ></textarea>
       </div>
       <button
-        class="bg-primary-orange text-white font-bold px-8 py-3 rounded-xl hover:bg-orange-400 transition-colors"
+        class="bg-primary-orange text-white font-bold px-8 py-3 rounded-xl hover:bg-dark_primary-orange transition-colors"
       >
         POST
       </button>
