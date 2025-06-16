@@ -5,7 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="tailwind.js"></script>
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                orange: "#FF824E",
+                purple: "#8588B8",
+                blue: "#AEE1ED",
+              },
+              dark_primary: {
+                orange: "#D75722",
+                purple: "#5A5C7F",
+                blue: "#D75722",
+              },
+            },
+            fontFamily: {
+              chewy: ["Chewy", "cursive"],
+              montserrat: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
     <link
       href="https://fonts.googleapis.com/css2?family=Chewy&family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
@@ -71,7 +95,7 @@
         ></textarea>
       </div>
       <button
-        class="bg-orange-300 text-white font-bold px-8 py-3 rounded-xl hover:bg-orange-400 transition-colors"
+        class="bg-primary-orange text-white font-bold px-8 py-3 rounded-xl hover:bg-orange-400 transition-colors"
       >
         POST
       </button>
