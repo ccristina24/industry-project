@@ -45,50 +45,42 @@
         </h1>
         <div class="flex flex-wrap gap-4">
           <div
-            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent"
-            onclick="this.classList.toggle('border-darkprimary-blue')"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent topic-btn"
           >
             YouthMedia
           </div>
           <div
-            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent"
-            onclick="this.classList.toggle('border-darkprimary-blue')"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent topic-btn"
           >
             MuralPainting
           </div>
           <div
-            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent"
-            onclick="this.classList.toggle('border-darkprimary-blue')"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent topic-btn"
           >
             Design
           </div>
           <div
-            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent"
-            onclick="this.classList.toggle('border-darkprimary-blue')"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent topic-btn"
           >
             Lifestyle
           </div>
           <div
-            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent"
-            onclick="this.classList.toggle('border-darkprimary-blue')"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent topic-btn"
           >
             Education
           </div>
           <div
-            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent"
-            onclick="this.classList.toggle('border-darkprimary-blue')"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent topic-btn"
           >
             Singing
           </div>
           <div
-            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent"
-            onclick="this.classList.toggle('border-darkprimary-blue')"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent topic-btn"
           >
             Health
           </div>
           <div
-            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent"
-            onclick="this.classList.toggle('border-darkprimary-blue')"
+            class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base cursor-pointer transition border-2 border-transparent topic-btn"
           >
             OutdoorActivites
           </div>
@@ -119,23 +111,43 @@
       const postBtn = document.getElementById("post-btn");
       const postInput = document.getElementById("post-input");
       const posts = document.getElementById("posts");
+      const topicDivs = document.querySelectorAll(".topic-btn");
+
+      let selectedTopic = "";
+
+      topicDivs.forEach((div) => {
+        div.addEventListener("click", function () {
+          // Remove border from all
+          topicDivs.forEach((d) =>
+            d.classList.remove("border-darkprimary-blue")
+          );
+          // Add border to clicked
+          this.classList.add("border-darkprimary-blue");
+          // Save selected topic
+          selectedTopic = this.textContent.trim();
+        });
+      });
 
       postBtn.addEventListener("click", () => {
         const text = postInput.value.trim();
         if (text) {
-          // Create a new container
           const container = document.createElement("div");
           container.className =
             "max-w-xl mx-auto mt-10 bg-white bg-opacity-90 rounded-3xl border-2 border-primary-orange p-8 shadow-lg font-montserrat";
           container.innerHTML = `
-            <div class="mb-6">
-              <h2 class="text-lg font-bold text-darkprimary-blue mb-2">YOUR POST</h2>
-              <div class="w-full min-h-32 border rounded-lg p-4 text-gray-600">${text.replace(
-                /\n/g,
-                "<br>"
-              )}</div>
-            </div>
-          `;
+        <div class="mb-6">
+          ${
+            selectedTopic
+              ? `<div class="inline-block mb-2 px-6 py-2 rounded-full bg-primary-blue text-gray-600 font-semibold border-2 border-darkprimary-blue">${selectedTopic}</div>`
+              : ""
+          }
+          <h2 class="text-lg font-bold text-darkprimary-blue mb-2">YOUR POST</h2>
+          <div class="w-full min-h-32 border rounded-lg p-4 text-gray-600">${text.replace(
+            /\n/g,
+            "<br>"
+          )}</div>
+        </div>
+      `;
           posts.appendChild(container);
           postInput.value = "";
         }
