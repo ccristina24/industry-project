@@ -37,10 +37,12 @@
   <body>
     <div
       class="max-w-xl mx-auto mt-10 bg-white bg-opacity-90 rounded-3xl border-2 border-primary-orange p-8 shadow-lg font-montserrat"
+      id="main-container"
     >
       <div class="mb-6">
-        <h1 class="text-lg font-bold text-darkprimary-blue mb-4">CHOOSE TOPIC</h1>
-
+        <h1 class="text-lg font-bold text-darkprimary-blue mb-4">
+          CHOOSE TOPIC
+        </h1>
         <div class="flex flex-wrap gap-4">
           <div
             class="bg-primary-blue text-gray-600 px-6 py-2 rounded-full font-semibold text-base"
@@ -84,20 +86,52 @@
           </div>
         </div>
       </div>
-
       <div class="mb-6">
-        <h2 class="text-lg font-bold text-darkprimary-blue mb-2">WHAT’S HAPPENING?</h2>
-
+        <h2 class="text-lg font-bold text-darkprimary-blue mb-2">
+          WHAT’S HAPPENING?
+        </h2>
         <textarea
-          class="w-full h-32 border rounded-lg p-4 text-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-300 resize-none"
+          id="post-input"
+          class="w-full h-32 border rounded-lg p-4 text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-orange resize-none"
           placeholder="Write something..."
         ></textarea>
       </div>
       <button
-        class="bg-primary-orange text-white font-bold px-8 py-3 rounded-xl hover:bg-dark_primary-orange transition-colors"
+        id="post-btn"
+        class="bg-primary-orange text-white font-bold px-8 py-3 rounded-xl hover:bg-darkprimary-orange transition-colors"
       >
         POST
       </button>
     </div>
+
+    <!-- Second Cointainer -->
+    <div id="posts"></div>
+
+    <script>
+      const postBtn = document.getElementById("post-btn");
+      const postInput = document.getElementById("post-input");
+      const posts = document.getElementById("posts");
+
+      postBtn.addEventListener("click", () => {
+        const text = postInput.value.trim();
+        if (text) {
+          // Create a new container
+          const container = document.createElement("div");
+          container.className =
+            "max-w-xl mx-auto mt-10 bg-white bg-opacity-90 rounded-3xl border-2 border-primary-orange p-8 shadow-lg font-montserrat";
+          container.innerHTML = `
+            <div class="mb-6">
+              <h2 class="text-lg font-bold text-darkprimary-blue mb-2">YOUR POST</h2>
+              <div class="w-full min-h-32 border rounded-lg p-4 text-gray-600">${text.replace(
+                /\n/g,
+                "<br>"
+              )}</div>
+            </div>
+          `;
+          posts.appendChild(container);
+          postInput.value = "";
+        }
+      });
+    </script>
   </body>
 </html>
