@@ -15,12 +15,12 @@ Copilot (AI)
 
 ✅ Features
 
-Custom Tailwind config: Uses our own colors and fonts.
-Topic selection: Clickable topic buttons with a highlight (dark border) for the selected topic.
-Post input: Textarea for users to write a message/post
-Post button: Posts the message when clicked.
-Dynamic post display: Each post appears in a new styled container below, showing the message and the selected topic.
-Multiple posts: Users can submit multiple posts, each displayed in its own container.
+- Custom Tailwind config: Uses our own colors and fonts.
+- Topic selection: Clickable topic buttons with a highlight (dark border) for the selected topic.
+- Post input: Textarea for users to write a message/post
+- Post button: Posts the message when clicked.
+- Dynamic post display: Each post appears in a new styled container below, showing the message and the selected topic.
+- Multiple posts: Users can submit multiple posts, each displayed in its own container.
 
 <img width="623" alt="Screenshot 2025-06-16 at 22 07 37" src="https://github.com/user-attachments/assets/3fc46f9a-6dfa-4ac6-b637-8ba80dd3c02d" />
 
